@@ -1,0 +1,32 @@
+{
+  "name": "electronic-circuit-board-demo",
+  "version": "1.0.0",
+  "description": "This example emulates a energy consumption in a simple circuit board having a cell as a power source, some equipment and also power supply.",
+  "main": "ec.js",
+  "scripts": {
+    "start": "http-server -o",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anandprajapati1/electronic-circuit-board-demo.git"
+  },
+  "keywords": [
+    "electronic",
+    "circuit",
+    "angular",
+    "OOJS"
+  ],
+  "author": "Anand Kumar Prajapati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anandprajapati1/electronic-circuit-board-demo/issues"
+  },
+  "homepage": "https://github.com/anandprajapati1/electronic-circuit-board-demo#readme",
+  "dependencies": {
+    "angular": "^1.6.1"
+  },
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}

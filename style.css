@@ -1,0 +1,110 @@
+body,
+* {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-weight: bold;
+}
+
+.battery {
+	border: 3px solid gray;
+	border-radius: 3px;
+	height: 50px;
+	width: 200px;
+	position: relative;
+	float: left;
+}
+
+.battery::after {
+	content: '';
+	height: 60%;
+	width: 10px;
+	background-color: gray;
+	position: absolute;
+	right: -10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	border-radius: 0 3px 3px 0;
+}
+
+.battery .charge-amt {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	display: inline-block;
+	color: #000;
+	width: 100%;
+	height: 20px;
+	text-align: center;
+}
+
+.battery .charge {
+	width: 0;
+	height: 100%;
+	background-color: hsl(100, 100%, 50%);
+}
+
+.switch {
+	border: 3px solid lightgray;
+	cursor: pointer;
+	margin-left: 80px;
+	margin-top: 15px;
+	display: inline-block;
+	/*float: left;*/
+}
+
+.switch>span {
+	width: auto;
+	text-align: center;
+	min-width: 30px;
+	padding: 0 10px;
+	height: 20px;
+	background-color: grey;
+	display: inline-block;
+	color: black;
+}
+
+.switch.on>span {
+	background-color: green;
+	color: white;
+}
+
+.eqpmts {
+	margin-top: 40px;
+}
+
+.eqpmts .item {
+	display: inline-block;
+	width: 20%;
+	padding: 0 20px;
+	text-align: center;
+	transition: all .3s linear;
+}
+.eqpmts .item:hover{
+	cursor: pointer;
+}
+.eqpmts .item>span{min-height: 150px;display: inline-block;min-width: 100px;margin: auto;}
+
+.eqpmts .item>span.BULB {
+	background: url('images/bulb-off.png') 0 0/contain no-repeat transparent;
+}
+
+.eqpmts .item>span.BULB.on {
+	background-image: url('images/bulb-on.png');
+}
+
+.eqpmts .item>span.FAN {
+	background: url('images/fan.png') 0 50%/contain no-repeat transparent;
+}
+
+.eqpmts .item>span.FAN.on {
+	background: url('images/fan.png') 0 50%/contain no-repeat transparent;
+	-webkit-animation: rotate .5s linear infinite;
+	-moz-animation: rotate .5s linear infinite;
+	animation: rotate .5s linear infinite;
+}
+
+@-webkit-keyframes rotate{
+	0%{-webkit-transform: rotateZ(0deg)}
+	100%{-webkit-transform: rotateZ(360deg)}
+}

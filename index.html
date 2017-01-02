@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<style type="text/css">
+		@charset "UTF-8";
+		[ng\:cloak],
+		[ng-cloak],
+		[data-ng-cloak],
+		[x-ng-cloak],
+		.ng-cloak,
+		.x-ng-cloak,
+		.ng-hide:not(.ng-hide-animate) {
+			display: none !important;
+		}
+		
+		ng\:form {
+			display: block;
+		}
+		
+		.ng-animate-shim {
+			visibility: hidden;
+		}
+		
+		.ng-anchor {
+			position: absolute;
+		}
+	</style>
+	<meta charset="UTF-8">
+	<meta name="robots" content="noindex">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+	<script src="node_modules/angular/angular.min.js"></script>
+	<script src="ec.js"></script>
+</head>
+
+<body ng-app="electronicCircuitApp">
+	<div class="container" ng-controller="ECController">
+		<div class="battery">
+			<div class="charge" style="{{'width:'+(Battery.charge*100/Battery.capacity)+'%;background-color:hsl('+Battery.chargePercent()+',100%,50%)'}}">
+				<span class="charge-amt">{{Battery.chargePercent()}} %</span>
+			</div>
+		</div>
+		<span class="{{Battery.isCharging?'switch on':'switch'}}" ng-click="chargeSwitchClick()">
+			<span>{{Battery.isCharging?'ON':'OFF'}}</span>
+		</span>
+		<br><br>
+		<div class="eqpmts">
+			<ul>
+				<li ng-repeat="x in equipments" class="item">
+					<span ng-class="x.type + (x.isOn?' on':' off')" title="Click to switch On/Off" ng-click="x.switchToggle(this)"></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>
